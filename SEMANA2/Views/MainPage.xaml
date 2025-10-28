@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEMANA2.Views.MainPage"
+            Title="Semana 2 tarea">
+
+    <ScrollView>
+        
+        <Grid Padding="16" RowSpacing="10" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Definimos todas las filas -->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <!-- Título -->
+                <RowDefinition/>
+                <!-- Estudiante label -->
+                <RowDefinition/>
+                <!-- Estudiante picker -->
+                <RowDefinition/>
+                <!-- Fecha label -->
+                <RowDefinition/>
+                <!-- Fecha picker -->
+
+                <RowDefinition/>
+                <!-- Parcial 1 título -->
+                <RowDefinition/>
+                <!-- Seg1 label -->
+                <RowDefinition/>
+                <!-- Seg1 entry -->
+                <RowDefinition/>
+                <!-- Ex1 label -->
+                <RowDefinition/>
+                <!-- Ex1 entry -->
+                <RowDefinition/>
+                <!-- Nota P1 -->
+
+                <RowDefinition/>
+                <!-- Parcial 2 título -->
+                <RowDefinition/>
+                <!-- Seg2 label -->
+                <RowDefinition/>
+                <!-- Seg2 entry -->
+                <RowDefinition/>
+                <!-- Ex2 label -->
+                <RowDefinition/>
+                <!-- Ex2 entry -->
+                <RowDefinition/>
+                <!-- Nota P2 -->
+
+                <RowDefinition/>
+                <!-- Nota Final label -->
+                <RowDefinition/>
+                <!-- Nota Final valor -->
+                <RowDefinition/>
+                <!-- Botón -->
+            </Grid.RowDefinitions>
+
+            <!-- TÍTULO -->
+            <Label Grid.Row="0"
+                   Text="SISTEMA DE CALIFICACIONES"
+                   FontSize="22" FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- ESTUDIANTE -->
+            <Label Grid.Row="1" Text="Estudiante:" />
+            <Picker Grid.Row="2"
+                    x:Name="ListaEstudiantes"
+                    Title="Seleccione..."
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    TitleColor="#666666"
+                    HeightRequest="48"
+                    IsEnabled="True"
+                    InputTransparent="False">
+                <Picker.Items>
+                    <x:String>Andrea C.</x:String>
+                    <x:String>Mauricio Y.</x:String>
+                    <x:String>Daniel R.</x:String>
+                    <x:String>Carla T.</x:String>
+                    <x:String>Sofía P.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- FECHA -->
+            <Label Grid.Row="3" Text="Fecha:" />
+            <DatePicker Grid.Row="4"
+                        x:Name="FechaSeleccionada"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        HeightRequest="48"
+                        IsEnabled="True"
+                        InputTransparent="False" />
+
+            <!-- PARCIAL 1 -->
+            <Label Grid.Row="5" Text="PARCIAL 1" FontAttributes="Bold" />
+
+            <Label Grid.Row="6" Text="Seguimiento 1 (0–10) ×0.3:" />
+            <Entry Grid.Row="7"
+                   x:Name="SeguimientoUno"
+                   Keyboard="Numeric"
+                   Placeholder="0 - 10"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="#666666"
+                   HeightRequest="48"
+                   IsEnabled="True"
+                   InputTransparent="False" />
+
+            <Label Grid.Row="8" Text="Examen 1 (0–10) ×0.2:" />
+            <Entry Grid.Row="9"
+                   x:Name="ExamenUno"
+                   Keyboard="Numeric"
+                   Placeholder="0 - 10"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="#666666"
+                   HeightRequest="48"
+                   IsEnabled="True"
+                   InputTransparent="False" />
+
+            <!-- Nota Parcial 1 (simple) -->
+            <Grid Grid.Row="10" ColumnDefinitions="Auto,*">
+                <Label Text="Nota PARCIAL 1:" FontAttributes="Bold"/>
+                <Label Grid.Column="1" x:Name="ResultadoParcialUno" Text="—" FontAttributes="Bold"/>
+            </Grid>
+
+            <!-- PARCIAL 2 (DEBAJO DEL PARCIAL 1) -->
+            <Label Grid.Row="11" Text="PARCIAL 2" FontAttributes="Bold" />
+
+            <Label Grid.Row="12" Text="Seguimiento 2 (0–10) ×0.3:" />
+            <Entry Grid.Row="13"
+                   x:Name="SeguimientoDos"
+                   Keyboard="Numeric"
+                   Placeholder="0 - 10"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="#666666"
+                   HeightRequest="48"
+                   IsEnabled="True"
+                   InputTransparent="False" />
+
+            <Label Grid.Row="14" Text="Examen 2 (0–10) ×0.2:" />
+            <Entry Grid.Row="15"
+                   x:Name="ExamenDos"
+                   Keyboard="Numeric"
+                   Placeholder="0 - 10"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="#666666"
+                   HeightRequest="48"
+                   IsEnabled="True"
+                   InputTransparent="False" />
+
+            <!-- Nota Parcial 2 -->
+            <Grid Grid.Row="16" ColumnDefinitions="Auto,*">
+                <Label Text="Nota PARCIAL 2:" FontAttributes="Bold"/>
+                <Label Grid.Column="1" x:Name="ResultadoParcialDos" Text="—" FontAttributes="Bold"/>
+            </Grid>
+
+            <!-- NOTA FINAL -->
+            <Label Grid.Row="17" Text="NOTA FINAL:" FontAttributes="Bold"/>
+            <Label Grid.Row="18" x:Name="ResultadoFinal" Text="—" FontAttributes="Bold"/>
+
+            <!-- BOTÓN -->
+            <Button Grid.Row="19"
+                    Text="CALCULAR NOTAS DEL ESTUDIANTE"
+                    x:Name="BtnCalcular"
+                    Clicked="BtnCalcular_Clicked"
+                    BackgroundColor="#4F46E5"
+                    TextColor="White"
+                    HeightRequest="50"
+                    CornerRadius="8"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

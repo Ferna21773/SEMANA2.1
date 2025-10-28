@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEMANA2.Views.LoginPage"
+             Title="Iniciar Sesion">
+    <ScrollView>
+        <Grid Padding="24" RowSpacing="12">
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <!-- título -->
+                <RowDefinition />
+                <!-- usuario label -->
+                <RowDefinition />
+                <!-- usuario entry -->
+                <RowDefinition />
+                <!-- pass label -->
+                <RowDefinition />
+                <!-- pass entry -->
+                <RowDefinition />
+                <!-- botón -->
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Iniciar sesión"
+                   FontSize="22" FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Grid.Row="1" Text="Usuario:" />
+            <Entry Grid.Row="2" x:Name="UsuarioEntry"
+                   Placeholder="Carlos, Ana o Jose"
+                   Keyboard="Text"
+                   BackgroundColor="White" TextColor="Black"
+                   HeightRequest="48" />
+
+            <Label Grid.Row="3" Text="Contraseña:" />
+            <Entry Grid.Row="4" x:Name="PasswordEntry"
+                   Placeholder="••••••••"
+                   IsPassword="True"
+                   BackgroundColor="White" TextColor="Black"
+                   HeightRequest="48" />
+
+            <Button Grid.Row="5" Text="Ingresar"
+                    x:Name="BtnIngresar"
+                    Clicked="BtnIngresar_Clicked"
+                    BackgroundColor="#4F46E5" TextColor="White"
+                    HeightRequest="50" CornerRadius="8" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
